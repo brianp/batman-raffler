@@ -1,8 +1,5 @@
 BatmanRaffler::Application.routes.draw do
-
-  scope "api" do
-    resources :entries
-  end
+  resources :entries
 
   root to: "main#index"
 end

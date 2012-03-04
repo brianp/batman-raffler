@@ -19,8 +19,3 @@ class BatmanRaffler.EntriesController extends Batman.Controller
   update: (params) ->
 
   destroy: (params) ->
-
-  appendEntry: ->
-    # view = new Raffler.Views.Entry(model: entry)
-    # @$('#entries').append(view.render().el)
-

@@ -5,6 +5,7 @@
       %title Shopify Classifieds
       = stylesheet_link_tag 'application'
       = javascript_include_tag "application"
+      = csrf_meta_tags
   %body
     #main.container
       %p#flashnotice.alert-message.success{"data-showif" => "Classifieds.flash.success.length"}
