@@ -1,83 +1,24 @@
 class EntriesController < ApplicationController
-  # GET /entries
-  # GET /entries.json
+  respond_to :json
+
   def index
-    @entries = Entry.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @entries }
-    end
+    respond_with Entry.all
   end
 
-  # GET /entries/1
-  # GET /entries/1.json
   def show
-    @entry = Entry.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @entry }
-    end
+    respond_with Entry.find(params[:id])
   end
 
-  # GET /entries/new
-  # GET /entries/new.json
-  def new
-    @entry = Entry.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @entry }
-    end
-  end
-
-  # GET /entries/1/edit
-  def edit
-    @entry = Entry.find(params[:id])
-  end
-
-  # POST /entries
-  # POST /entries.json
   def create
-    @entry = Entry.new(params[:entry])
-
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
-        format.json { render json: @entry, status: :created, location: @entry }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with Entry.create(params[:entry])
   end
 
-  # PUT /entries/1
-  # PUT /entries/1.json
   def update
-    @entry = Entry.find(params[:id])
-
-    respond_to do |format|
-      if @entry.update_attributes(params[:entry])
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with Entry.update(params[:id], params[:entry])
   end
 
-  # DELETE /entries/1
-  # DELETE /entries/1.json
   def destroy
-    @entry = Entry.find(params[:id])
-    @entry.destroy
-
-    respond_to do |format|
-      format.html { redirect_to entries_url }
-      format.json { head :ok }
-    end
+    respond_with Entry.destroy(params[:id])
   end
 end
+

@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}
+      %title Shopify Classifieds
+      = stylesheet_link_tag 'application'
+      = javascript_include_tag "application"
+  %body
+    #main.container
+      %p#flashnotice.alert-message.success{"data-showif" => "Classifieds.flash.success.length"}
+        %a.close{:href => "#", :onclick => "$('#flashnotice').hide(); return false"} ×
+        %span{"data-bind" => "Classifieds.flash.success"}
+      %p#flashwarning.alert-message.error{"data-showif" => "Classifieds.flash.error.length"}
+        %a.close{:href => "#", :onclick => "$('#flashwarning').hide(); return false"} ×
+        %span{"data-bind" => "Classifieds.flash.error"}
+      #container{"data-yield" => "main"}
