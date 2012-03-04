@@ -41,6 +41,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    ejs (1.0.0)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
@@ -120,6 +121,7 @@ PLATFORMS
 DEPENDENCIES
   batman-rails
   coffee-rails (~> 3.1.1)
+  ejs
   haml-rails
   haml_assets
   jquery-rails

@@ -1,4 +1,2 @@
-%li{'data-foreach-entry' => "entries"}
-  %span{'data-bind' => 'entry.name'}
-
-  %span{'data-bind' => 'entry.winner', class: 'winner'}
+%span{'data-bind' => 'entry.name'}
+%span{'data-bind' => 'entry.winner', 'data-showif' => 'entry.winner', class: 'winner'}

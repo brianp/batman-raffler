@@ -1,9 +1,10 @@
 %h1 Batman Raffler
 
-%form.new_entry
-  %input#new_entry_name{type: "text", name: "name"}
+%form.new_entry#new_entry{'data-formfor-entry' => 'entry', 'data-event-submit' => 'create'}
+  %input#entry_name{name: "entry[name]", 'data-bind' => "entry.name"}
   %input{type: "submit", value: "Add"}
 
-%ul#entries{'data-partial' => 'entries/_entry'}
+%ul
+  %li{'data-foreach-entry' => 'entries', 'data-partial' => 'entries/_entry'}
 
 %button#draw Draw Winner

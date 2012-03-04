@@ -4,6 +4,7 @@ gem 'rails', '3.1.3'
 gem 'batman-rails'
 gem 'haml-rails'
 gem 'haml_assets'
+gem 'ejs'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
