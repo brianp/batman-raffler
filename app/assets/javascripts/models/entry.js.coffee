@@ -7,4 +7,10 @@ class BatmanRaffler.Entry extends Batman.Model
   win: ->
     @set('winner', true)
     @save
-    @trigger('highlight')
+
+  @drawWinner: ->
+    entries = BatmanRaffler.Entry.get('all')
+    num = Math.floor(Math.random()*(entries.length))
+    console.log num
+    entry = entries.toArray()[num]
+    entry.win()

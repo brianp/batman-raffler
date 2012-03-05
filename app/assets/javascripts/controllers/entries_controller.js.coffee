@@ -4,8 +4,6 @@ class BatmanRaffler.EntriesController extends Batman.Controller
     @set 'entries', BatmanRaffler.Entry.get('all')
     @set 'entry', new BatmanRaffler.Entry()
 
-  show: (params) ->
-
   create: (params) ->
     @get('entry').save (err) =>
       $('#new_entry').attr('disabled', false)
@@ -15,7 +13,3 @@ class BatmanRaffler.EntriesController extends Batman.Controller
       else
         BatmanRaffler.flashSuccess "Ad #{@get('entry.name')} created successfully!"
         @set 'entry', new BatmanRaffler.Entry()
-
-  update: (params) ->
-
-  destroy: (params) ->

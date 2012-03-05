@@ -7,4 +7,4 @@
 %ul#entries
   %li{'data-foreach-entry' => 'entries', 'data-partial' => 'entries/_entry'}
 
-%button#draw Draw Winner
+%button#draw{'data-event-click' => 'Entry.drawWinner'} Draw Winner
