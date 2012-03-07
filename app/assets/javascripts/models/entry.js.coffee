@@ -6,10 +6,15 @@ class BatmanRaffler.Entry extends Batman.Model
 
   win: ->
     @set('winner', true)
+    Entry.latest_winner = @get('id')
     @save()
 
-  @drawWinner: ->
+  @drawWinner: (node, event)->
     entries = BatmanRaffler.Entry.get('all')
     num = Math.floor(Math.random()*(entries.length))
     entry = entries.toArray()[num]
     entry.win()
+
+  @accessor 'isWinner',
+    get: ->
+      (Entry.latest_winner == @id)
