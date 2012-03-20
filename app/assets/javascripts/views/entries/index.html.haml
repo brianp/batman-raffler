@@ -5,6 +5,6 @@
   %input{type: "submit", value: "Add"}
 
 %ul#entries
-  %li{'data-foreach-entry' => 'entries', 'data-partial' => 'entries/_entry'}
+  %li{'data-foreach-entry' => 'entries', 'data-partial' => 'entries/_entry', 'data-bind-id' => 'entry.id', class: 'entry'}
 
 %button#draw{'data-event-click' => 'Entry.drawWinner'} Draw Winner

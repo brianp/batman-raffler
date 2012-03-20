@@ -6,8 +6,8 @@ class BatmanRaffler.Entry extends Batman.Model
 
   win: ->
     @set('winner', true)
-    $('.winner').removeClass('highlight')
-    $('#'+@id).addClass('highlight')
+    $('.entry .winner').removeClass('highlight')
+    $('#'+@id+' .winner').addClass('highlight')
     @save()
 
   @drawWinner: (node, event)->
