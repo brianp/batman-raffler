@@ -6,7 +6,8 @@ class BatmanRaffler.Entry extends Batman.Model
 
   win: ->
     @set('winner', true)
-    Entry.latest_winner = @get('id')
+    $('.winner').removeClass('highlight')
+    $('#'+@id).addClass('highlight')
     @save()
 
   @drawWinner: (node, event)->
@@ -14,7 +15,3 @@ class BatmanRaffler.Entry extends Batman.Model
     num = Math.floor(Math.random()*(entries.length))
     entry = entries.toArray()[num]
     entry.win()
-
-  @accessor 'isWinner',
-    get: ->
-      (Entry.latest_winner == @id)
